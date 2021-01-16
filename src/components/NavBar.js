@@ -8,6 +8,7 @@ import Typography from "@material-ui/core/Typography";
 import { FiLogOut } from "react-icons/fi";
 
 import { FaYoutube } from "react-icons/fa";
+import HomeIcon from '@material-ui/icons/Home';
 
 const useStyles = makeStyles((theme) => ({
   title: {
@@ -23,6 +24,10 @@ const NavBar = (props) => {
     window.location.href = "/";
   };
 
+  const Status = () => {
+    window.location.href = "/profiles";
+  };
+
   return (
     <AppBar position="static">
       <Toolbar>
@@ -32,6 +37,9 @@ const NavBar = (props) => {
         <Typography variant="h5" className={classes.title}>
           Youtube IT
         </Typography>
+        <button className="home" onClick={() => Status()}>
+          <HomeIcon style={{ fontSize: 40 }} />
+        </button>
         <button className="logout" onClick={() => Logout()}>
           <FiLogOut />
         </button>

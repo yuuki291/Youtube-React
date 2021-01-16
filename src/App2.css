@@ -1,0 +1,105 @@
+@import url("https://fonts.googleapis.com/css2?family=Lobster&display=swap");
+
+.bg {
+    background: transparent;
+    color: lightgray;
+    margin-top: 0rem;
+    font-size: 2.5rem;
+    border: none;
+    outline: none;
+    cursor: pointer; /*これ以外同じ後から短縮するかも*/
+  }
+
+.container {
+   margin: 40px auto auto auto;
+   max-width: 1200px;
+  }
+
+.app-profiles {
+  background-color: #292929;
+  width: 25%;
+  min-width: 350px;
+  height: 700px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.app-details {
+  background-color: #292929;
+  width: 15%;
+  min-width: 270px;
+  height: 305px;
+  padding: 10px;
+  margin: 10px 0px 30px 45px;
+  border-radius: 5px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.app-dms {
+  background-color: #292929;
+  width: 25%;
+  min-width: 380px;
+  height: 640px;
+  padding: 10px;
+  margin: 10px;
+  border-radius: 5px;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+}
+
+.title-ask {
+  margin-right: 30px;
+}
+
+.photo{
+  background-color: transparent;
+  color: lightgray;
+  font-size: 30px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.user{
+  background-color: transparent;
+  color: lightgray;
+  margin-left: 10px;
+  font-size: 26px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.user-invalid {
+  background-color: transparent;
+  color: lightgray;
+  margin-left: 10px;
+  font-size: 26px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.trash {
+  background-color: transparent;
+  color: lightgray;
+  margin-left: 10px;
+  font-size: 26px;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
