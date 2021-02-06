@@ -8,6 +8,7 @@ import { BsTrash } from 'react-icons/bs';
 import { BsPersonPlus } from 'react-icons/bs';
 import { FaUserEdit } from 'react-icons/fa';
 import { IconButton } from '@material-ui/core';
+const url = "http://localhost:8000";
 
 const useStyles = makeStyles((theme) => ({
 
@@ -64,7 +65,7 @@ const ProfileManager = () => {
             <div className="image-wrapper">
                 {profile.id ?
                     <img src={profile.img} alt="profile" className="profile-image" /> :
-                    <img src="http://127.0.0.1:8000/media/image/null.png" alt="profile" className="profile-image" />
+                    <img src={`${url}/media/image/null.png`} alt="profile" className="profile-image" />
                 }
                 <input
                     type="file"

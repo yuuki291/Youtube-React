@@ -1,6 +1,9 @@
 import React, { createContext, useState, useEffect } from 'react'
 import { withCookies } from "react-cookie";
 import axios from 'axios';
+//http://localhost:8000
+const url = "http://localhost:8000";
+
 
 export const ApiContext = createContext()
 const ApiContextProvider = (props) => {
@@ -13,11 +16,10 @@ const ApiContextProvider = (props) => {
     const [selectedVideo, setSelectedVideo] = useState(null)
     const [modalIsOpen, setModalIsOpen] = useState(false)
 
-
     useEffect(() => {
         const getVideos = async () => {
             try {
-                const res = await axios.get('http://localhost:8000/api/videos/', {
+                const res = await axios.get(`${url}/api/videos/`, {
                     headers: {
                         'Authorization': `JWT ${token}`
                     }
@@ -37,7 +39,7 @@ const ApiContextProvider = (props) => {
         uploadData.append('video', video, video.name)
         uploadData.append('thum', thum, thum.name)
         try {
-            const res = await axios.post('http://127.0.0.1:8000/api/videos/', uploadData, {
+            const res = await axios.post(`${url}/api/videos/`, uploadData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `JWT ${token}`
@@ -57,7 +59,7 @@ const ApiContextProvider = (props) => {
     const deleteVideo = async () => {
         try {
             await axios.delete(
-                `http://127.0.0.1:8000/api/videos/${selectedVideo.id}/`,
+                `${url}/api/videos/${selectedVideo.id}/`,
                 {
                     headers: {
                         'Content-Type': 'application/json',
@@ -77,7 +79,7 @@ const ApiContextProvider = (props) => {
             const uploadData = new FormData()
             uploadData.append('like', selectedVideo.like + 1)
 
-            const res = await axios.patch(`http://127.0.0.1:8000/api/videos/${selectedVideo.id}/`, uploadData, {
+            const res = await axios.patch(`${url}/api/videos/${selectedVideo.id}/`, uploadData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `JWT ${token}`,
@@ -95,7 +97,7 @@ const ApiContextProvider = (props) => {
             const uploadData = new FormData()
             uploadData.append('dislike', selectedVideo.dislike + 1)
 
-            const res = await axios.patch(`http://127.0.0.1:8000/api/videos/${selectedVideo.id}/`, uploadData, {
+            const res = await axios.patch(`${url}/api/videos/${selectedVideo.id}/`, uploadData, {
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': `JWT ${token}`,

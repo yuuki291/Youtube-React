@@ -34,7 +34,9 @@ const NavBar2 = (props) => {
         window.location.href = "/youtube";
     }
 
-
+    const Call = () => {
+        window.location.href = "/call";
+    };
 
     return (
         <AppBar position="static">
@@ -45,6 +47,9 @@ const NavBar2 = (props) => {
                 <Typography variant="h5" className={classes.title}>
                     Youtube IT
                 </Typography>
+                <button className="logo" onClick={() => Call()} style={{ fontSize: 20 }} >
+                    <h3>Call</h3>
+                </button>
                 <button className="bg">
                     <Badge className={classes.bg}
                         badgeContent={3}

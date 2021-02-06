@@ -6,6 +6,7 @@ import Card from '@material-ui/core/Card';
 import CardMedia from '@material-ui/core/CardMedia';
 import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
+const url = "http://localhost:8000";
 
 const useStyles = makeStyles((theme) => ({
     button: {
@@ -28,7 +29,7 @@ const Profile = ({ profileData, askData }) => {
 
             {profileData.img ?
                 <CardMedia style={{ minWidth: 100 }} image={profileData.img} /> :
-                <CardMedia style={{ minWidth: 100 }} image="http://127.0.0.1:8000/media/image/null.png" />}
+                <CardMedia style={{ minWidth: 100 }} image={`${url}/media/image/null.png`} />}
 
             <CardContent style={{ padding: 5 }}>
                 <Typography variant="h6">{profileData.nickName}</Typography>

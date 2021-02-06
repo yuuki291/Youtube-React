@@ -10,7 +10,7 @@ import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
 import CircularProgress from '@material-ui/core/CircularProgress';
 import { START_FETCH, FETCH_SUCCESS, ERROR_CATCHED, INPUT_EDIT, TOGGLE_MODE } from './actionTypes';
-
+const url = "http://localhost:8000";
 
 const useStyles = makeStyles((theme) => ({
   paper: {
@@ -127,7 +127,7 @@ const Login = (props) => {
     if (state.isLoginView) {
       try {
         dispatch({ type: START_FETCH })
-        const res = await axios.post('http://127.0.0.1:8000/authen/', state.credentialsLog, {
+        const res = await axios.post(`${url}/authen/`, state.credentialsLog, {
           headers: { 'Content-Type': 'application/json' }
         })
         props.cookies.set('current-token', res.data.token)
@@ -139,7 +139,7 @@ const Login = (props) => {
     } else {
       try {
         dispatch({ type: START_FETCH })
-        await axios.post('http://127.0.0.1:8000/api/user/create/', state.credentialsReg, {
+        await axios.post(`${url}/api/user/create/`, state.credentialsReg, {
           headers: { 'Content-Type': 'application/json' }
         })
         dispatch({ type: FETCH_SUCCESS })

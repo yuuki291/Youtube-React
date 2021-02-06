@@ -52,6 +52,10 @@
   margin-right: 30px;
 }
 
+h4 {
+  color: #fff;
+}
+
 .photo{
   background-color: transparent;
   color: lightgray;
@@ -91,6 +95,9 @@
   cursor: pointer;
 }
 
+li{
+  list-style: none;
+}
 
 
 

@@ -3,6 +3,7 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import SNS from "./App2";
+import App3 from "./App3";
 import * as serviceWorker from "./serviceWorker";
 
 import { Route, BrowserRouter } from "react-router-dom";
@@ -15,8 +16,9 @@ const routing = (
       <CookiesProvider>
         <Route exact path="/" component={Login} />
 
-        <Route exact path="/youtube" component={App} />
+        <Route path="/youtube" component={App} />
         <Route path="/profiles" component={SNS} />
+        <Route path="/call" component={App3} />
       </CookiesProvider>
     </BrowserRouter>
   </React.StrictMode>
