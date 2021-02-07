@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
+import NavBar from "./components/NavBar";
 
 class App3 extends Component {
     constructor(props) {
@@ -102,6 +103,7 @@ class App3 extends Component {
         // })().catch(failure)
         return (
             <div>
+                <NavBar />
                 <video
                     style={{
                         width: 240, height: 240,
