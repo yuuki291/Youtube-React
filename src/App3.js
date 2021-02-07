@@ -1,6 +1,15 @@
 import React, { Component } from 'react';
 import io from 'socket.io-client';
 import NavBar from "./components/NavBar";
+import "./App3.css";
+import { createMuiTheme } from "@material-ui/core/styles";
+import { ThemeProvider as MuiThemeProvider } from "@material-ui/core/styles";
+
+const theme = createMuiTheme({
+    typography: {
+        fontFamily: '"Comic Neue",cursive',
+    },
+})
 
 class App3 extends Component {
     constructor(props) {
@@ -103,23 +112,26 @@ class App3 extends Component {
         // })().catch(failure)
         return (
             <div>
-                <NavBar />
+                <MuiThemeProvider theme={theme}>
+                    <NavBar />
+                </MuiThemeProvider>
                 <video
                     style={{
-                        width: 240, height: 240,
-                        margin: 5, backgroundColor: 'black'
+                        width: 500, height: 500,
+                        margin: 5, backgroundColor: 'black',
+                        marginLeft: 30, marginTop: 100
                     }}
                     ref={this.localVideoref}
                     autoPlay></video>
-
                 <video
                     style={{
-                        width: 240, height: 240,
-                        margin: 5, backgroundColor: 'black'
+                        width: 500, height: 500,
+                        margin: 5, backgroundColor: 'black',
+                        marginLeft: 200, marginTop: 100
                     }}
                     ref={this.remoteVideoref}
                     autoPlay></video>
-
+                <br />
                 <button onClick={this.createOffer}>Offer</button>
                 <button onClick={this.createAnswer}>Answer</button>
                 <br />
@@ -127,6 +139,11 @@ class App3 extends Component {
                 <br />
                 <button onClick={this.setRemoteDescription}>Set Remote Desc</button>
                 <button onClick={this.addCandidate}>Add addCandidate</button>
+                <br />
+                <h3>使用方法</h3>
+                <p>offer("type":"offer"の部分を相手のtextにペースト) -> 相手側(Set Remote Descボタン)</p>
+                <br />
+                <p>自分は相手側の("type":"Answer"の部分を相手のtextにペースト) -> (Set Remote Descボタン) -> 自分の"candidate":"candidate: を相手側に貼り替えて　-> (Add add Candidate)</p>
             </div>
         );
     }
